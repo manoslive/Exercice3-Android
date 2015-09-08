@@ -1,9 +1,252 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:id="@+id/MainLayout">
+    tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:clickable="false"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/BTN_Start"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="30dp"
+                android:text="Démarrer la partie"
+                android:onClick="DemarrerPartie" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:onClick="cliquerBouton">
+
+            <Button
+                android:id="@+id/BTN_1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+            <Button
+                android:id="@+id/BTN_2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+            <Button
+                android:id="@+id/BTN_3"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:enabled="true"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+            <Button
+                android:id="@+id/BTN_4"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:enabled="true"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:orientation="horizontal"
+            android:onClick="cliquerBouton">
+
+            <Button
+                android:id="@+id/BTN_5"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+            <Button
+                android:id="@+id/BTN_6"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+            <Button
+                android:id="@+id/BTN_7"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+            <Button
+                android:id="@+id/BTN_8"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:orientation="horizontal"
+            android:onClick="cliquerBouton">
+
+            <Button
+                android:id="@+id/BTN_9"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+            <Button
+                android:id="@+id/BTN_10"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+            <Button
+                android:id="@+id/BTN_11"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+            <Button
+                android:id="@+id/BTN_12"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:orientation="horizontal"
+            android:onClick="cliquerBouton">
+
+            <Button
+                android:id="@+id/BTN_13"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+            <Button
+                android:id="@+id/BTN_14"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+            <Button
+                android:id="@+id/BTN_15"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+
+            <Button
+                android:id="@+id/BTN_16"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:padding="30dp"
+                android:text="OK"
+                android:visibility="invisible"
+                android:onClick="cliquerBouton" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
