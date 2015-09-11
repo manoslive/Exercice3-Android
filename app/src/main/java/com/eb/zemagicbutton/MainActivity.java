@@ -1,10 +1,14 @@
 package com.eb.zemagicbutton;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -25,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void cliquerBouton(View view) {
+        TextView leCounter = (TextView) findViewById(R.id.counter);
         findViewById(lastButtonCliqued).setVisibility(View.INVISIBLE);
         int random;
         do {
@@ -33,10 +38,20 @@ public class MainActivity extends AppCompatActivity {
         lastRandom = random;
         changerVisibiliteBouton(random);
         nbClique++;
+        leCounter.setText(String.valueOf(CLIQUETOTAL-nbClique) + " cliques restants");
+
         if(nbClique == CLIQUETOTAL)
         {
-            findViewById(view.getId()).setVisibility(View.INVISIBLE);
+            Toast.makeText(getApplicationContext(), "YOU WIN! You can now enjoy the next level.",
+            Toast.LENGTH_LONG).show();
+            for(int i = 1; i<=16;i++)
+            {
+                Resources r = getResources();
+                String name = getPackageName();
+                findViewById(r.getIdentifier("BTN_" + i, "id", name)).setVisibility(View.INVISIBLE);
+            }
             findViewById(R.id.BTN_Start).setVisibility(View.VISIBLE);
+            findViewById(R.id.linearLayout).setBackgroundResource(R.drawable.buttons2_low);
         }
         //verifierFinPartie(view, view.getId());
     }
@@ -175,7 +190,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
+        findViewById(R.id.linearLayout).setBackgroundResource(R.drawable.buttons_low);
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
