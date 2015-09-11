@@ -29,11 +29,16 @@ public class MainActivity extends AppCompatActivity {
         int random;
         do {
             random = rand.nextInt(16) + 1;
-            lastRandom = random;
         }while(random == lastRandom);
+        lastRandom = random;
         changerVisibiliteBouton(random);
         nbClique++;
-        verifierFinPartie(view, view.getId());
+        if(nbClique == CLIQUETOTAL)
+        {
+            findViewById(view.getId()).setVisibility(View.INVISIBLE);
+            findViewById(R.id.BTN_Start).setVisibility(View.VISIBLE);
+        }
+        //verifierFinPartie(view, view.getId());
     }
 
 
@@ -161,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void verifierFinPartie(View view, int boutonID) {
         if (nbClique == CLIQUETOTAL) {
-            findViewById(boutonID).setVisibility(View.INVISIBLE);
+            findViewById(view.getId()).setVisibility(View.INVISIBLE);
             findViewById(R.id.BTN_Start).setVisibility(View.VISIBLE);
         }
     }
