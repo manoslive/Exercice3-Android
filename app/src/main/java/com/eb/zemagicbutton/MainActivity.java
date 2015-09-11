@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,97 +17,85 @@ public class MainActivity extends AppCompatActivity {
 
     final int CLIQUETOTAL = 10;
     int nbClique = 0;
-    int lastButtonCliqued = 0;
+    int buttonToClick = 0;
     int lastRandom = 0;
+    boolean isWon = false;
+    boolean isClicked = false;
     Random rand = new Random();
 
     public void DemarrerPartie(View view) {
         View b = findViewById(R.id.BTN_Start);
-        b.setVisibility(View.INVISIBLE);
-        int random = rand.nextInt(16) + 1;
-        changerVisibiliteBouton(random);
-        lastRandom = random;
+        if (!isWon) {
+            TextView leCounter = (TextView) findViewById(R.id.counter);
+            leCounter.setVisibility(View.VISIBLE);
+            b.setVisibility(View.INVISIBLE);
+            int random = rand.nextInt(16) + 1;
+            changerVisibiliteBouton(random);
+            lastRandom = random;
+        }
     }
 
     public void cliquerBouton(View view) {
-        TextView leCounter = (TextView) findViewById(R.id.counter);
-        findViewById(lastButtonCliqued).setVisibility(View.INVISIBLE);
-        int random;
-        do {
-            random = rand.nextInt(16) + 1;
-        }while(random == lastRandom);
-        lastRandom = random;
-        changerVisibiliteBouton(random);
-        nbClique++;
-        leCounter.setText(String.valueOf(CLIQUETOTAL-nbClique) + " cliques restants");
+/*
+        Button clickButton = (Button) findViewById(view.getId());
+        clickButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView leCounter = (TextView) findViewById(R.id.counter);
+                findViewById(lastButtonCliqued).setVisibility(View.INVISIBLE);
+                int random;
+                if(v.getId() ==  lastButtonCliqued)
+                {
+                    do {
+                        random = rand.nextInt(16) + 1;
+                    } while (random == lastRandom);
+                    lastRandom = random;
+                    changerVisibiliteBouton(random);
+                    nbClique++;
+                    leCounter.setText(String.valueOf(CLIQUETOTAL - nbClique) + " cliques restants");
+                    verifierFinPartie(v, v.getId());
+                }
+            }
+        });
+*/
+        Button button = (Button) findViewById(view.getId());
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isClicked = true;
+            }
+        });
 
-        if(nbClique == CLIQUETOTAL)
-        {
+        if(isClicked) {
+            TextView leCounter = (TextView) findViewById(R.id.counter);
+            findViewById(buttonToClick).setVisibility(View.INVISIBLE);
+            int random;
+            do {
+                random = rand.nextInt(16) + 1;
+            } while (random == lastRandom);
+            lastRandom = random;
+            changerVisibiliteBouton(random);
+            nbClique++;
+            leCounter.setText(String.valueOf(CLIQUETOTAL - nbClique) + " cliques restants");
+            verifierFinPartie(view, view.getId());
+        }
+    }
+
+    public void verifierFinPartie(View view, int boutonID) {
+        TextView leCounter = (TextView) findViewById(R.id.counter);
+        if (nbClique == CLIQUETOTAL) {
+            isWon = true;
+            leCounter.setVisibility(View.INVISIBLE);
             Toast.makeText(getApplicationContext(), "YOU WIN! You can now enjoy the next level.",
-            Toast.LENGTH_LONG).show();
-            for(int i = 1; i<=16;i++)
-            {
+                    Toast.LENGTH_LONG).show();
+            for (int i = 1; i <= 16; i++) {
                 Resources r = getResources();
                 String name = getPackageName();
                 findViewById(r.getIdentifier("BTN_" + i, "id", name)).setVisibility(View.INVISIBLE);
             }
             findViewById(R.id.BTN_Start).setVisibility(View.VISIBLE);
-            findViewById(R.id.linearLayout).setBackgroundResource(R.drawable.buttons2_low);
-        }
-        //verifierFinPartie(view, view.getId());
-    }
-
-
-    public void changerVisibilite(int BoutonID) {
-        switch (BoutonID) {
-            case R.id.BTN_1:
-                findViewById(R.id.BTN_1).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_2:
-                findViewById(R.id.BTN_2).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_3:
-                findViewById(R.id.BTN_3).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_4:
-                findViewById(R.id.BTN_4).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_5:
-                findViewById(R.id.BTN_5).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_6:
-                findViewById(R.id.BTN_6).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_7:
-                findViewById(R.id.BTN_7).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_8:
-                findViewById(R.id.BTN_8).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_9:
-                findViewById(R.id.BTN_9).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_10:
-                findViewById(R.id.BTN_10).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_11:
-                findViewById(R.id.BTN_11).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_12:
-                findViewById(R.id.BTN_12).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_13:
-                findViewById(R.id.BTN_13).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_14:
-                findViewById(R.id.BTN_14).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_15:
-                findViewById(R.id.BTN_15).setVisibility(View.VISIBLE);
-                break;
-            case R.id.BTN_16:
-                findViewById(R.id.BTN_16).setVisibility(View.VISIBLE);
-                break;
+            findViewById(R.id.MainLayout).setBackgroundResource(R.drawable.buttons2_low);
+            findViewById(R.id.BTN_Start).setVisibility(View.INVISIBLE);
         }
     }
 
@@ -114,75 +103,68 @@ public class MainActivity extends AppCompatActivity {
         switch (BoutonID) {
             case 1:
                 findViewById(R.id.BTN_1).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_1;
+                buttonToClick = R.id.BTN_1;
                 break;
             case 2:
                 findViewById(R.id.BTN_2).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_2;
+                buttonToClick = R.id.BTN_2;
                 break;
             case 3:
                 findViewById(R.id.BTN_3).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_3;
+                buttonToClick = R.id.BTN_3;
                 break;
             case 4:
                 findViewById(R.id.BTN_4).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_4;
+                buttonToClick = R.id.BTN_4;
                 break;
             case 5:
                 findViewById(R.id.BTN_5).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_5;
+                buttonToClick = R.id.BTN_5;
                 break;
             case 6:
                 findViewById(R.id.BTN_6).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_6;
+                buttonToClick = R.id.BTN_6;
                 break;
             case 7:
                 findViewById(R.id.BTN_7).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_7;
+                buttonToClick = R.id.BTN_7;
                 break;
             case 8:
                 findViewById(R.id.BTN_8).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_8;
+                buttonToClick = R.id.BTN_8;
                 break;
             case 9:
                 findViewById(R.id.BTN_9).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_9;
+                buttonToClick = R.id.BTN_9;
                 break;
             case 10:
                 findViewById(R.id.BTN_10).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_10;
+                buttonToClick = R.id.BTN_10;
                 break;
             case 11:
                 findViewById(R.id.BTN_11).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_11;
+                buttonToClick = R.id.BTN_11;
                 break;
             case 12:
                 findViewById(R.id.BTN_12).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_12;
+                buttonToClick = R.id.BTN_12;
                 break;
             case 13:
                 findViewById(R.id.BTN_13).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_13;
+                buttonToClick = R.id.BTN_13;
                 break;
             case 14:
                 findViewById(R.id.BTN_14).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_14;
+                buttonToClick = R.id.BTN_14;
                 break;
             case 15:
                 findViewById(R.id.BTN_15).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_15;
+                buttonToClick = R.id.BTN_15;
                 break;
             case 16:
                 findViewById(R.id.BTN_16).setVisibility(View.VISIBLE);
-                lastButtonCliqued = R.id.BTN_16;
+                buttonToClick = R.id.BTN_16;
                 break;
-        }
-    }
-
-    public void verifierFinPartie(View view, int boutonID) {
-        if (nbClique == CLIQUETOTAL) {
-            findViewById(view.getId()).setVisibility(View.INVISIBLE);
-            findViewById(R.id.BTN_Start).setVisibility(View.VISIBLE);
         }
     }
 
@@ -190,8 +172,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.linearLayout).setBackgroundResource(R.drawable.buttons_low);
-        }
+        findViewById(R.id.MainLayout).setBackgroundResource(R.drawable.buttons_low);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

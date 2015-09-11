@@ -260,7 +260,8 @@
             android:gravity="center_horizontal"
             android:layout_gravity="center"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:visibility="invisible" />
     </LinearLayout>
 
 </RelativeLayout>
