@@ -39,37 +39,38 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:onClick="cliquerBouton">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/BTN_1"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
 
             <Button
                 android:id="@+id/BTN_2"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
 
             <Button
                 android:id="@+id/BTN_3"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:enabled="true"
                 android:padding="30dp"
                 android:text="OK"
@@ -81,7 +82,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:enabled="true"
                 android:padding="30dp"
                 android:text="OK"
@@ -94,8 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="false"
-            android:orientation="horizontal"
-            android:onClick="cliquerBouton">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/BTN_5"
@@ -103,44 +103,48 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
 
             <Button
                 android:id="@+id/BTN_6"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
 
             <Button
                 android:id="@+id/BTN_7"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
 
             <Button
                 android:id="@+id/BTN_8"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
 
         </LinearLayout>
 
@@ -148,19 +152,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="false"
-            android:orientation="horizontal"
-            android:onClick="cliquerBouton">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/BTN_9"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
 
             <Button
                 android:id="@+id/BTN_10"
@@ -168,85 +172,91 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
 
             <Button
                 android:id="@+id/BTN_11"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
 
             <Button
                 android:id="@+id/BTN_12"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="false"
-            android:orientation="horizontal"
-            android:onClick="cliquerBouton">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/BTN_13"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
 
             <Button
                 android:id="@+id/BTN_14"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
 
             <Button
                 android:id="@+id/BTN_15"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
 
             <Button
                 android:id="@+id/BTN_16"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="false"
+                android:clickable="true"
                 android:padding="30dp"
                 android:text="OK"
                 android:visibility="invisible"
-                android:onClick="cliquerBouton" />
+                android:onClick="cliquerBouton"
+                android:enabled="true" />
         </LinearLayout>
 
         <TextView

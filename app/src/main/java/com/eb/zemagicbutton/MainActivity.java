@@ -36,37 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void cliquerBouton(View view) {
-/*
-        Button clickButton = (Button) findViewById(view.getId());
-        clickButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView leCounter = (TextView) findViewById(R.id.counter);
-                findViewById(lastButtonCliqued).setVisibility(View.INVISIBLE);
-                int random;
-                if(v.getId() ==  lastButtonCliqued)
-                {
-                    do {
-                        random = rand.nextInt(16) + 1;
-                    } while (random == lastRandom);
-                    lastRandom = random;
-                    changerVisibiliteBouton(random);
-                    nbClique++;
-                    leCounter.setText(String.valueOf(CLIQUETOTAL - nbClique) + " cliques restants");
-                    verifierFinPartie(v, v.getId());
-                }
-            }
-        });
-*/
-        Button button = (Button) findViewById(view.getId());
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isClicked = true;
-            }
-        });
 
-        if(isClicked) {
             TextView leCounter = (TextView) findViewById(R.id.counter);
             findViewById(buttonToClick).setVisibility(View.INVISIBLE);
             int random;
@@ -78,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             nbClique++;
             leCounter.setText(String.valueOf(CLIQUETOTAL - nbClique) + " cliques restants");
             verifierFinPartie(view, view.getId());
-        }
+
     }
 
     public void verifierFinPartie(View view, int boutonID) {
